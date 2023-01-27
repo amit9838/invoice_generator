@@ -16,7 +16,7 @@ Run
 
 `pip install pillow`
 
-or simplay run
+or simply run
 
 `pip install requirements.txt`
 
