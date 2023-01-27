@@ -140,7 +140,7 @@ labels_x_pos = 480
 pdf.line(40,(565-y_offset-20*i-5),556,(565-y_offset-20*i-5))
 y_offset = y_offset-5 #  Gross total offset
 pdf.drawRightString(labels_x_pos,(565-y_offset-20*i-25),  "Sub Total : ")
-pdf.drawRightString(550,(565-y_offset-20*i-25),str(sub_total))
+pdf.drawRightString(550,(565-y_offset-20*i-25),str(sub_total)+".0")
 
 pdf.drawRightString(labels_x_pos,(565-y_offset-20*i-40), "Tax : ")
 pdf.drawRightString(550,(565-y_offset-20*i-40),"+ "+str(total_tax))

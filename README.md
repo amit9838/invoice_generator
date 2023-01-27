@@ -8,7 +8,7 @@ Automatically generate invoice using python. [Sample pdf](https://github.com/ami
 
 Step 1 - Clone the repo or download the archive. Now head to "invoice_genarator"  directory.
 
-Step 2 - Then Download  "Reportlab" and "pillow" with following commands-
+Step 2 - Then Download  "reportlab" and "pillow" with following commands-
 
 Run
 
@@ -24,10 +24,6 @@ Step 3 - Now feed the data into the file using in array foramt.
 
 That's it
 
-
-
 #### Reference
 
 For in-depth usage visit  [Documentation](https://docs.reportlab.com/reportlab/userguide/ch1_intro/)  or for some extra recipies visit [More](https://www.reportlab.com/dev/docs/).
-
-
