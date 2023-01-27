@@ -28,6 +28,6 @@ That's it
 
 #### Reference
 
-For in-deth usage visit  [Documentation](https://docs.reportlab.com/reportlab/userguide/ch1_intro/)  or for some extra recipies visit [More](https://www.reportlab.com/dev/docs/).
+For in-depth usage visit  [Documentation](https://docs.reportlab.com/reportlab/userguide/ch1_intro/)  or for some extra recipies visit [More](https://www.reportlab.com/dev/docs/).
 
 
