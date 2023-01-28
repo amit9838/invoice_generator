@@ -1,4 +1,4 @@
-# Automate you invoice📃 with python
+# Automate you invoice with python
 
 Automatically generate invoice using python. [Sample pdf](https://github.com/amit9838/invoice_generator/blob/master/sample_invoice.pdf)
 
