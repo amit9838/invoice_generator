@@ -34,9 +34,9 @@ for x in range(len(item)):
 
 
 # Y offsets
-y_offset = 0   # Header section (above Invoice,company)
-cust_offset = 50 #Customer section offset
-table_offset = 0   #Table section offset
+y_offset = 0   # Header section y-offset (above Invoice,company) 
+cust_offset = 50 #Customersection y-offset
+table_offset = 0   #Table section y-offset
 
 
 # initializing variables with values
@@ -81,9 +81,9 @@ pdf.drawRightString(550,(620-y_offset), "Status : Repaired")
 y_offset = y_offset + table_offset
 # Items list header
 
-unit_price_x_pos = 370  #Default 325
-warrenty_x_pos = 280  #Default 325
-qty_x_pos = 470  #Default 450
+unit_price_x_pos = 370  #Default 370
+warrenty_x_pos = 280  #Default 280
+qty_x_pos = 470  #Default 470
 price_x_pos = 550  #Default 550
 
 pdf.setFont("Helvetica-Bold", 12)
@@ -97,12 +97,8 @@ pdf.drawString(unit_price_x_pos,(585-y_offset), "Unit Price")
 pdf.drawCentredString(qty_x_pos,(585-y_offset), "Qty")
 pdf.drawRightString(price_x_pos,(585-y_offset), "Price")
 pdf.setFont("Helvetica", 13)
-# text = pdf.beginText(40, 680)
-
 
 # Calculate total cost of a product -> Unit_price * quantity * tax_amt  
-
-
 i=0;
 for i in range(len(objects)):
     pdf.drawString(40,(565-y_offset-20*i), objects[i].item)
@@ -135,7 +131,7 @@ for i in range(len(objects)):
 
 
 # Calculate Gross Total
-labels_x_pos = 480
+labels_x_pos = 480  #default 480
 
 pdf.line(40,(565-y_offset-20*i-5),556,(565-y_offset-20*i-5))
 y_offset = y_offset-5 #  Gross total offset

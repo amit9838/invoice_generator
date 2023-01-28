@@ -1,4 +1,4 @@
-# Generate invoice with python
+# Automate you invoice📃 with python
 
 Automatically generate invoice using python. [Sample pdf](https://github.com/amit9838/invoice_generator/blob/master/sample_invoice.pdf)
 
@@ -6,9 +6,9 @@ Automatically generate invoice using python. [Sample pdf](https://github.com/ami
 
 ### Directions to use
 
-Step 1 - Clone the repo or download the archive. Now head to "invoice_genarator"  directory.
+Step 1 - Clone the repo or download the archive to you local system. Now head to "invoice_genarator"  directory.
 
-Step 2 - Then Download  "reportlab" and "pillow" with following commands-
+Step 2 - Then install "reportlab" and "pillow" with following commands:
 
 Run
 
@@ -20,7 +20,7 @@ or simply run
 
 `pip install requirements.txt`
 
-Step 3 - Now feed the data into the file using in array foramt.
+Step 3 - Now feed the data into the pdf.py file in array format.
 
 That's it
 
