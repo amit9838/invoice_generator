@@ -2,10 +2,9 @@
 
 Automatically generate print friendly invoices/bills using python. [Sample pdf](https://github.com/amit9838/invoice_generator/blob/master/sample_invoice.pdf)
 
-<kbd>
 <img title="" src="https://github.com/amit9838/invoice_generator/blob/master/Screenshot/sample_invoice.png" alt="" width="724" style = "border-radius:5px;">
-</kbd>
 
+---
 
 ### Directions to use
 
