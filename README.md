@@ -10,24 +10,20 @@ Step 1 - Clone the repo or download the archive to you local system. Now head to
 
 Step 2 - Then install "reportlab" and "pillow" with following commands:
 
-Run
-
+Run these commands in your terminal-
 `pip install reportlab`
-
 `pip install pillow`
 
 or simply run
-
 `pip install requirements.txt`
 
 Step 3 - Now feed the data into the pdf.py file in array format.
 
 That's it
 
-#### Working
+### Working
 
 Data is converted into objects for simplicity.
-
 ```python
 # Sample Data 
 item = ['Dell Keboard Wireless', 'Samsung RAM 4GB','Samsung SSD 480GB']
@@ -47,13 +43,12 @@ class Product:
         self.t_price = unit_price*quantity
 ```
 
-Some usefut offsets
-
+Some useful offsets for repositioning of elements.
 ```python
 # Y offsets - Global
-y_offset = 0   # Header section y-offset (above Invoice,company) 
-cust_offset = 50 #Customersection y-offset
-table_offset = 0   #Table section y-offset
+y_offset = 0   # Header section (above Invoice,company) 
+cust_offset = 50 #Customer section
+table_offset = 0   #Table section
 sub_total_y_offset = -5  # Subtotal/total section offset
 
 # x-offsets in the table
@@ -62,10 +57,9 @@ warrenty_x_pos = 280  #Default 280
 qty_x_pos = 470  #Default 470
 price_x_pos = 550  #Default 550
 
-# y-offset is dynamically calculated for entry and subtotal section is 
-# shifted automatically. 
+# y-offset for new entries is dynamically calculated.
 ```
 
-#### Reference
+### Reference
 
 For in-depth usage visit  [Documentation](https://docs.reportlab.com/reportlab/userguide/ch1_intro/)  or for some extra recipies visit [More](https://www.reportlab.com/dev/docs/).
