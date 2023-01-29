@@ -26,8 +26,6 @@ Step 3 - Now feed the data into the pdf.py file in array format.
 
 That's it
 
----
-
 ### Working
 
 Data is converted into objects for simplicity.
@@ -51,8 +49,6 @@ class Product:
         self.t_price = unit_price*quantity
 ```
 
-
-
 Some useful offsets for repositioning of elements.
 
 ```python
@@ -70,8 +66,6 @@ price_x_pos = 550  #Default 550
 
 # y-offset for new entries is dynamically calculated.
 ```
-
----
 
 ### Reference
 
