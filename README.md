@@ -24,8 +24,6 @@ Step 3 - Now feed the data into the pdf.py file in array format.
 
 That's it
 
-
-
 #### Working
 
 Data is converted into objects for simplicity.
@@ -67,8 +65,6 @@ price_x_pos = 550  #Default 550
 # y-offset is dynamically calculated for entry and subtotal section is 
 # shifted automatically. 
 ```
-
-
 
 #### Reference
 
