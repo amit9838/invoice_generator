@@ -1,8 +1,8 @@
-# Automate you invoice with python
+# Automate your invoice with python
 
-Automatically generate invoice using python. [Sample pdf](https://github.com/amit9838/invoice_generator/blob/master/sample_invoice.pdf)
+Automatically generate print friendly invoices/bills using python. [Sample pdf](https://github.com/amit9838/invoice_generator/blob/master/sample_invoice.pdf)
 
-<img title="" src="https://github.com/amit9838/invoice_generator/blob/master/Screenshot/sample_invoice3.jpg" alt="" width="724" style = "border-radius:5px;">
+<img title="" src="https://github.com/amit9838/invoice_generator/blob/master/Screenshot/sample_invoice.jpg" alt="" width="724" style = "border-radius:5px;">
 
 ### Directions to use
 
@@ -23,6 +23,52 @@ or simply run
 Step 3 - Now feed the data into the pdf.py file in array format.
 
 That's it
+
+
+
+#### Working
+
+Data is converted into objects for simplicity.
+
+```python
+# Sample Data 
+item = ['Dell Keboard Wireless', 'Samsung RAM 4GB','Samsung SSD 480GB']
+warrenty=[12,24,36]  # in months
+unit_price = [700, 2400,4860]
+qty = [1,2,1]
+tax = [0,.18,.18]
+
+objects = []
+class Product:
+    def __init__(self,item,warrenty,unit_price,tax,quantity):
+        self.item = item
+        self.unit_price = unit_price
+        self.warrenty = warrenty
+        self.tax = tax
+        self.quantity = quantity
+        self.t_price = unit_price*quantity
+```
+
+Some usefut offsets
+
+```python
+# Y offsets - Global
+y_offset = 0   # Header section y-offset (above Invoice,company) 
+cust_offset = 50 #Customersection y-offset
+table_offset = 0   #Table section y-offset
+sub_total_y_offset = -5  # Subtotal/total section offset
+
+# x-offsets in the table
+unit_price_x_pos = 370  #Default 370
+warrenty_x_pos = 280  #Default 280
+qty_x_pos = 470  #Default 470
+price_x_pos = 550  #Default 550
+
+# y-offset is dynamically calculated for entry and subtotal section is 
+# shifted automatically. 
+```
+
+
 
 #### Reference
 

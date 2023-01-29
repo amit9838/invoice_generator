@@ -1,7 +1,4 @@
 from reportlab.pdfgen import canvas
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.pdfbase import pdfmetrics
-from reportlab.lib import colors
 
 #NOTE:  Canvas methods only support UTF-8 characters therefore each data must be converted to string while passing to function/method. 
 
@@ -37,6 +34,7 @@ for x in range(len(item)):
 y_offset = 0   # Header section y-offset (above Invoice,company) 
 cust_offset = 50 #Customersection y-offset
 table_offset = 0   #Table section y-offset
+sub_total_y_offset = -5  # Subtotal/total section offset
 
 
 # initializing variables with values
@@ -65,18 +63,25 @@ pdf.drawRightString(550,(690-y_offset), "+9180xxxxxxxx")
 y_offset = y_offset + cust_offset
 
 # Customer Section - left
+left_offset_y = 0  # adds y offset to "Billed To" setion
+y_offset = y_offset + left_offset_y
 pdf.setFont("Helvetica-Bold", 13)
 pdf.drawString(40,(680-y_offset), "Billed To:")
 pdf.setFont("Helvetica", 13)
 pdf.drawString(40,(660-y_offset), "James Bond")
 # pdf.drawString(40,(640-y_offset), "amitchaudhary0539@gmail.com")
 pdf.drawString(40,(640-y_offset), "+9197xxxxxxxx")
-pdf.drawString(40,(620-y_offset), "Bansi,Siddharthnagar")
+pdf.drawString(40,(620-y_offset), "Bansi, Siddharthnagar")
+y_offset = y_offset - left_offset_y
 
 # Customer Section - right
+right_offset_y = 0   # adds y offset to "Status/invoice" setion
+y_offset = y_offset + right_offset_y 
 pdf.drawRightString(550,(660-y_offset), "Invoice : #123")
 pdf.drawRightString(550,(640-y_offset), "Issued on : Jan 1, 2020")
-pdf.drawRightString(550,(620-y_offset), "Status : Repaired")
+pdf.drawRightString(550,(620-y_offset), "Payment Status : Paid")
+y_offset = y_offset - right_offset_y
+
 
 y_offset = y_offset + table_offset
 # Items list header
@@ -114,8 +119,9 @@ for i in range(len(objects)):
         pdf.drawString(unit_price_x_pos+45,(565-y_offset-20*i), "+Tax")
         pdf.setFont("Helvetica", 13)
     pdf.drawString(qty_x_pos,(565-y_offset-20*i), str(objects[i].quantity))
-    pdf.drawRightString(price_x_pos,(565-y_offset-20*i), str(objects[i].t_price * objects[i].quantity)+".0")
+    pdf.drawRightString(price_x_pos,(565-y_offset-20*i), str(objects[i].t_price)+".0")
 
+pdf.line(40,(565-y_offset-20*i-5),556,(565-y_offset-20*i-5))
 
 # Calculate total tax
 total_tax=0;
@@ -129,12 +135,10 @@ for i in range(len(objects)):
     sub_total += objects[i].t_price
     
 
-
 # Calculate Gross Total
-labels_x_pos = 480  #default 480
+y_offset = y_offset+sub_total_y_offset #  Gross total offset
 
-pdf.line(40,(565-y_offset-20*i-5),556,(565-y_offset-20*i-5))
-y_offset = y_offset-5 #  Gross total offset
+labels_x_pos = 480  #default 480
 pdf.drawRightString(labels_x_pos,(565-y_offset-20*i-25),  "Sub Total : ")
 pdf.drawRightString(550,(565-y_offset-20*i-25),str(sub_total)+".0")
 
