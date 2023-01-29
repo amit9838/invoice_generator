@@ -4,26 +4,34 @@ Automatically generate print friendly invoices/bills using python. [Sample pdf](
 
 <img title="" src="https://github.com/amit9838/invoice_generator/blob/master/Screenshot/sample_invoice.jpg" alt="" width="724" style = "border-radius:5px;">
 
+---
+
 ### Directions to use
 
 Step 1 - Clone the repo or download the archive to you local system. Now head to "invoice_genarator"  directory.
 
-Step 2 - Then install "reportlab" and "pillow" with following commands:
+Step 2 - Install "reportlab" and "pillow" with following commands:
 
-Run these commands in your terminal-
+Run these commands in your terminal -
+
 `pip install reportlab`
+
 `pip install pillow`
 
 or simply run
+
 `pip install requirements.txt`
 
 Step 3 - Now feed the data into the pdf.py file in array format.
 
 That's it
 
+---
+
 ### Working
 
 Data is converted into objects for simplicity.
+
 ```python
 # Sample Data 
 item = ['Dell Keboard Wireless', 'Samsung RAM 4GB','Samsung SSD 480GB']
@@ -43,7 +51,10 @@ class Product:
         self.t_price = unit_price*quantity
 ```
 
+
+
 Some useful offsets for repositioning of elements.
+
 ```python
 # Y offsets - Global
 y_offset = 0   # Header section (above Invoice,company) 
@@ -59,6 +70,8 @@ price_x_pos = 550  #Default 550
 
 # y-offset for new entries is dynamically calculated.
 ```
+
+---
 
 ### Reference
 
